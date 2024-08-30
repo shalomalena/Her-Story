@@ -10,7 +10,12 @@
     --footer-bg-color: #f8f9fa;
     --footer-text-color: #6c757d;
   }
-  
+
+  .no-top-margin {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
 body {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -72,6 +77,8 @@ header.py-5 p {
     line-height: 1.2;
   }
   
+
+
   h1 {
     font-size: 2.5rem;
   }
@@ -99,6 +106,8 @@ header.py-5 p {
   p {
     margin-top: 0;
     margin-bottom: 1rem;
+    padding-top: 0 !important;
+
   }
   
   hr {
@@ -168,63 +177,6 @@ header.py-5 p {
     color: #363636; /* Adjust hover color if needed */
 }
 
-.about-content p {
-    font-size: 1.125rem;
-    line-height: 1.75;
-    color: #111111;
-}
-
-.about-content h1 {
-    text-align: center; /* Center the title */
-    margin-bottom: 1.5rem;
-    font-size: 3rem;
-    color: #131212;
-}
-/* Apply styles to the container */
-#about .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-}
-
-/* Apply styles to all headings and paragraphs within the about section */
-#about h1,
-#about h2,
-#about h3,
-#about h4,
-#about h5,
-#about h6,
-#about p {
-    font-family: 'Arial', sans-serif; /* Ensure consistent font */
-    color: #333; /* Default text color */
-    margin-bottom: 1.5rem;
-}
-
-/* Additional paragraph styling */
-#about p {
-    font-size: 1.125rem;
-    line-height: 1.75;
-    text-align: justify;
-    color: #555;
-}
-
-/* Apply styles to the first paragraph */
-#about p:first-of-type {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #222;
-}
-
-/* Link styles */
-#about a {
-    color: #3273dc;
-    text-decoration: none;
-}
-
-#about a:hover {
-    text-decoration: underline;
-    color: #1d4e89;
-}
 
 
 #contact {

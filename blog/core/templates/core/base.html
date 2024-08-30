@@ -20,6 +20,22 @@
     />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <style>
+      /* Add this in your CSS file or within a <style> tag */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+      }
+      .section {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+      }
+      .container {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+      }
+    </style>
   </head>
 
   <body>
@@ -80,6 +96,11 @@
               href="{% url 'vent' %}"
               class="navbar-item is-size-5 has-text-weight-semibold"
               >Vent</a
+            >
+            <a
+              href="{% url 'help_list' %}"
+              class="navbar-item is-size-5 has-text-weight-semibold"
+              >Help</a
             >
             <a
               href="{% url 'contact' %}"
@@ -208,7 +229,7 @@
     <!-- About Section -->
     <section id="about" class="section">
       <div class="container">
-        <h1>{{ about_section.title }}</h1>
+        <h1 class="title">{{ about_section.title }}</h1>
         <p>{{ about_section.content|linebreaks }}</p>
       </div>
     </section>
@@ -304,6 +325,44 @@
         <p>
           Your message has been sent successfully. We will get back to you soon.
         </p>
+      </div>
+    </section>
+    {% endif %} {% if help_sections %}
+    <!-- Help Sections List -->
+    <section id="help" class="section">
+      <div class="container">
+        <h1 class="title">Help Resources</h1>
+        {% for section in help_sections %}
+        <div class="box">
+          <h2 class="title is-4">
+            <a href="{% url 'help_detail' section.pk %}">{{ section.title }}</a>
+          </h2>
+          <p>{{ section.content|truncatewords:30 }}</p>
+          <small>Posted on {{ section.created_at|date:"F j, Y, g:i a" }}</small>
+        </div>
+        {% empty %}
+        <p>No help resources available.</p>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %} {% if help_section %}
+    <!-- Help Section Detail -->
+    <section id="help-detail" class="section">
+      <div class="container">
+        <h1 class="title">{{ help_section.title }}</h1>
+        <p>{{ help_section.content|linebreaks }}</p>
+        <small
+          >Posted on {{ help_section.created_at|date:"F j, Y, g:i a" }}</small
+        >
+      </div>
+    </section>
+    {% endif %} {% if help_item %}
+    <!-- Help Item Detail -->
+    <section id="help-item-detail" class="section">
+      <div class="container">
+        <h1 class="title">{{ help_item.title }}</h1>
+        <p>{{ help_item.content|linebreaks }}</p>
+        <small>Posted on {{ help_item.created_at|date:"F j, Y, g:i a" }}</small>
       </div>
     </section>
     {% endif %} {% if vent_form %}

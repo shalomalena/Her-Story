@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from .models import AboutSection, Contact, Post, Category, Comment, Vent, VentComment
+from .models import AboutSection, Contact, Help, Post, Category, Comment, Vent, VentComment
 # Register your models here.
 class CommentItemInline(admin.TabularInline):
     model = Comment
@@ -41,10 +41,11 @@ class VentAdmin(admin.ModelAdmin):
 class VentCommentAdmin(admin.ModelAdmin):
     list_display = ['commenter_name', 'created_at']  # Update with existing fields
     search_fields = ['commenter_name', 'content']
+class HelpAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created_at']
+    search_fields = ['title', 'content']
 
 
-
-    
     
 
 
@@ -62,4 +63,5 @@ admin.site.register(AboutSection, AboutSectionAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(Vent, VentAdmin)
 admin.site.register(VentComment, VentCommentAdmin)
+admin.site.register(Help, HelpAdmin)
 

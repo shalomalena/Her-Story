@@ -2,7 +2,7 @@
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from .forms import CommentForm, ContactForm, VentCommentForm, VentForm
-from .models import Category, Post, Vent
+from .models import Category, Help, Post, Vent
 
 
 def detail(request, category_slug, slug):
@@ -90,4 +90,14 @@ def vent_detail(request, pk):
 def vent_success(request):
     return render(request, 'core/base.html')
 
+def help_list(request):
+    help_sections = Help.objects.all().order_by('-created_at')
+    return render(request, 'core/base.html', {'help_sections': help_sections})
 
+def help_detail(request, pk):
+    help_section = get_object_or_404(Help, pk=pk)  # Correct model and variable usage
+    return render(request, 'core/base.html', {'help_section': help_section})
+
+def help_item_detail(request, item_pk):
+    help_item = get_object_or_404(Help, pk=item_pk)  # Correct model and variable usage
+    return render(request, 'core/base.html', {'help_item': help_item})
