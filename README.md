@@ -1,4 +1,4 @@
-# HER Story Web App
+# HER Story 
 
 This project is a full-stack web application built using the Django web framework. It serves as a platform to raise awareness about women's abuse, relevant laws, and ongoing issues. The application allows an admin to manage posts, resources, and user interactions, while offering features for users to engage with stories and resources in a secure environment.
 
