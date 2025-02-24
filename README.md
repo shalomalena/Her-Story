@@ -12,8 +12,8 @@ Built With
 
 ## Features
 
-* Post Management: Admins can create and manage posts about real-life stories, legal updates, and other content related to women's abuse.
-* Comment System: Authenticated users can leave comments on posts.
+* Post Management: Admins can create and manage posts .
+* Comment System: Users can leave comments on posts.
 * Anonymous Story Sharing: Users can share personal stories anonymously through the "Vent Section". These submissions are reviewed by admins before publication.
 * Contact Form: A dedicated section for users to communicate directly with administrators.
 * Resource Management: Admins can add and update resources such as emergency contact information and counseling services.
